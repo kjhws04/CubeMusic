@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
     bool isFalling = false;
+    bool isMove = false;
 
     [SerializeField]
     Transform fakeCube = null;
@@ -78,24 +79,79 @@ public class PlayerController : MonoBehaviour
     }
 
     #region InputSystem (test)
-    public void UpButton()
+    public void OnUpTap()
     {
+        if (isMove == true)
+            return;
+        isMove = true;
         if (!GameManager._instance.isStartGame)
             return;
         CheckFalling();
+        CheckCanMove();
+        dir.Set(1, 0, 0);
+        InputCalc();
+    }
 
+    public void OnDownTap()
+    {
+        if (isMove == true)
+            return;
+        isMove = true;
+        if (!GameManager._instance.isStartGame)
+            return;
+        CheckFalling();
+        CheckCanMove();
         dir.Set(-1, 0, 0);
+        InputCalc();
+    }
+
+    public void OnLeftTap()
+    {
+        if (isMove == true)
+            return;
+        isMove = true;
+        if (!GameManager._instance.isStartGame)
+            return;
+        CheckFalling();
+        CheckCanMove();
+        dir.Set(0, 0, -1);
+        InputCalc();
+    }
+
+    public void OnRightTap()
+    {
+        if (isMove == true)
+            return;
+        isMove = true;
+        if (!GameManager._instance.isStartGame)
+            return;
+        CheckFalling();
+        CheckCanMove();
+        dir.Set(0, 0, 1);
+        InputCalc();
+    }
+
+    void CheckCanMove()
+    {
+        if (!canMove || !s_canPressKey || isFalling)
+            return;
+    }
+
+    void InputCalc()
+    {
         destPos = transform.position + new Vector3(-dir.x, 0, dir.z); //이동 목표값 계산
         rotDir = new Vector3(-dir.z, 0, -dir.x); //회전 목표값
         fakeCube.RotateAround(transform.position, rotDir, spinSpeed);
-        destRot = fakeCube.rotation; 
-        
+        destRot = fakeCube.rotation;
+
         if (timing.CheckTiming())
         {
             StartAction();
         }
+        isMove = false;
     }
     #endregion
+
 
     void Calc()
     {

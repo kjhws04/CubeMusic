@@ -31,9 +31,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Result _result;
 
-    private void Start()
+    private void Awake()
     {
         _instance = this;
+        Application.targetFrameRate = 60;
     }
 
     public void GameStart(int songNum, int bpm)
@@ -56,6 +57,11 @@ public class GameManager : MonoBehaviour
         AudioManager._instance.StopBGM();
 
         isStartGame = true;
+    }
+
+    public void GameExit()
+    {
+        Application.Quit();
     }
 
     public void MainMenu()

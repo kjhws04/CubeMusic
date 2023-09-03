@@ -7,6 +7,8 @@ public class Result : MonoBehaviour
 {
     [SerializeField]
     GameObject result_ui;
+    [SerializeField]
+    GameObject controller;
 
     [SerializeField]
     Text[] txt_Count;
@@ -33,6 +35,7 @@ public class Result : MonoBehaviour
     {
         FindObjectOfType<CenterFlame>().ResetMusic();
         StopBGM();
+        controller.SetActive(false);
 
         result_ui.SetActive(true);
         for (int i = 0; i < txt_Count.Length; i++)

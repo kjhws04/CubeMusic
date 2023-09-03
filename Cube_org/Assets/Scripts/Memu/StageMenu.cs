@@ -15,6 +15,9 @@ public class Song
 public class StageMenu : MonoBehaviour
 {
     [SerializeField]
+    GameObject controller;
+
+    [SerializeField]
     Song[] songList;
     [SerializeField]
     Text songName;
@@ -76,5 +79,6 @@ public class StageMenu : MonoBehaviour
 
         GameManager._instance.GameStart(currentSong, bpm);
         gameObject.SetActive(false);
+        controller.SetActive(true);
     }
 }

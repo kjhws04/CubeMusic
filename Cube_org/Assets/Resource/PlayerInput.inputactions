@@ -6,9 +6,36 @@
             "id": "bb6487fc-e66d-40ae-93f2-57ad9b356c18",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "UpTap",
                     "type": "Button",
-                    "id": "eac8eff2-bb05-4dda-a86b-b803bb6e89af",
+                    "id": "c8ec2a09-34fa-43f9-a705-c3fde7a426b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DownTap",
+                    "type": "Button",
+                    "id": "6319edf1-a299-443b-9fdd-a998f59ebb2d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftTap",
+                    "type": "Button",
+                    "id": "5105478f-c56a-43a8-84e4-94be3c43c7a2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightTap",
+                    "type": "Button",
+                    "id": "32706bd5-ecc4-4c88-b3be-90d0acac8bd1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -18,12 +45,45 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "4b1f6e98-e816-4d3a-9894-1e2c2002a93b",
+                    "id": "2b7e521d-72e5-4664-8785-931f7fcb77e7",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UpTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff1b3b0d-21df-483a-8e7c-66ef1e72f0b6",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "DownTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4077ea22-ad21-44e6-8537-4e0b1026c87f",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8b540ee-7bf1-4f7d-b845-08dd7c728c8e",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightTap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
